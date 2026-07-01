@@ -22,16 +22,14 @@
   .hero { position:relative; min-height:100vh; display:grid; grid-template-columns:1fr 1fr; overflow:hidden; }
   .hero-left { display:flex; flex-direction:column; justify-content:flex-end; padding:64px 56px; z-index:2; }
   .hero-right { position:absolute; inset:0; overflow:hidden; z-index:1; }
-  .hero-right img { 
-  width:100%; 
-  height:100%; 
-  object-fit:cover; 
-  object-position: center top; 
-  opacity:.85; 
-  display:block; 
-
-  filter: brightness(0.75) contrast(0.95);
+  .hero-right video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
 }
+  .hero-overlay { position:absolute; inset:0; background:rgba(19,7,48,0.6); }
   .hero-right::after { content:''; position:absolute; inset:0; background:linear-gradient(to right, var(--ink) 0%, transparent 45%); }
   .badge { display:inline-block; background:var(--sunset); color:var(--white); font-weight:500; font-size:11px; letter-spacing:.15em; text-transform:uppercase; padding:6px 14px; margin-bottom:28px; width:fit-content; }
   .hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(64px,8vw,110px); line-height:.92; margin-bottom:8px; }
@@ -43,7 +41,7 @@
   .cta-btn:hover { background:var(--dusk); }
 
   /* SECTIONS */
-  .section { padding:96px 10vw; border-top:1px solid rgba(255,255,255,.07); }
+  .section { padding:96px 10vw; }
   .section-label { font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--sunset); margin-bottom:20px; }
   .section h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,5vw,60px); line-height:1; margin-bottom:28px; max-width:700px; }
   .section p { font-size:16px; color:rgba(255,255,255,.72); max-width:640px; margin-bottom:18px; }
@@ -91,7 +89,7 @@
   .why-item p { font-size:15px; color:rgba(255,255,255,.78); margin:0; }
 
   /* MEET ANNA */
-  .meet-section { padding:96px 10vw; border-top:1px solid rgba(255,255,255,.07); display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .meet-section { padding:96px 10vw; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
   .meet-text .section-label { margin-bottom:20px; }
   .meet-text h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,4vw,54px); line-height:1; margin-bottom:24px; }
   .meet-text p { font-size:15px; color:rgba(255,255,255,.68); margin-bottom:14px; }
@@ -120,6 +118,8 @@
   .contact-line a { color:var(--white); text-decoration:none; }
   .contact-line a:hover { color:var(--sunset); }
 
+  .divider-coral { border:none; border-top:2px solid #e9635e; margin:0; }
+  .divider-periwinkle { border:none; border-top:2px solid #b393da; margin:0; }
   @media (max-width:768px) {
     .hero { grid-template-columns:1fr; min-height:auto; }
     .hero-right::after { 
@@ -163,10 +163,13 @@
     <a href="https://lab.starknkd.ai" class="cta-btn">Book Your Free Session →</a>
   </div>
   <div class="hero-right">
-    <img src="/assets/breath-studio-hero.png" alt="NKD Breath Lab">
+    <video autoplay muted loop playsinline>
+      <source src="assets/Header_vid_student_final.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
   </div>
 </section>
-
+<hr class="divider-coral">
 <!-- OVERVIEW -->
 <section class="section">
   <p class="section-label">What is this</p>
@@ -195,7 +198,7 @@
   <img src="assets/anna-founder.png">
 </div>
 </section>
-
+<hr class="divider-periwinkle">
 <!-- WHAT'S INCLUDED -->
 <section class="section">
   <p class="section-label">What happens in a session</p>
@@ -245,7 +248,7 @@
     </div>
   </div>
 </section>
-
+<hr class="divider-coral">
 <!-- WHY -->
 <section class="section">
   <p class="section-label">Why it matters</p>
@@ -259,7 +262,7 @@
     <div class="why-item"><span class="why-arrow">→</span><p>If exam stress or anxiety has been creeping in, this gives you something practical, not just advice</p></div>
   </div>
 </section>
-
+<hr class="divider-periwinkle">
 <!-- MEET ANNA -->
 <section class="meet-section">
   <div class="meet-text">
@@ -281,7 +284,7 @@
     </div>
   </div>
 </section>
-
+<hr class="divider-coral">
 <!-- WAYS TO GET INVOLVED -->
 <section class="section">
   <p class="section-label">For wellbeing teams and staff</p>
@@ -305,7 +308,7 @@
     </div>
   </div>
 </section>
-
+<hr class="divider-periwinkle">
 <!-- FOOTER CTA -->
 <div class="footer-cta">
   <div>
@@ -314,7 +317,7 @@
   <div class="footer-right">
     <a href="https://lab.starknkd.ai" class="cta-btn" style="text-align:center;">lab.starknkd.ai →</a>
     <p class="contact-line">📧 <a href="mailto:anna@starknkd.ai">anna@starknkd.ai</a></p>
-    <p class="contact-line">📱 07587 229883</p>
+    <p class="contact-line">📧 <a href="mailto:hello@starknkd.ai">hello@starknkd.ai</a></p>
     <p class="contact-line">🌐 <a href="https://starknkd.ai">starknkd.ai</a></p>
     <p class="contact-line">📸 <a href="https://instagram.com/annastark_nkd">@annastark_nkd</a></p>
   </div>
